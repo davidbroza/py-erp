@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+CURRENCIES = ("EUR", "GBP", "USD")
+
 
 # Application definition
 
@@ -37,7 +39,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "djmoney",
     "customers",
+    "ledger",
+    "contacts",
 ]
 
 MIDDLEWARE = [
