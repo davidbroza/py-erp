@@ -17,8 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+dashboard_urls = include("dashboard.urls")
+
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("customers", include("customers.urls")),
-    path("ledger", include("ledger.urls")),
+    path("customers/", include("customers.urls")),
+    path("ledger/", include("ledger.urls")),
+    path("dashboard/", dashboard_urls),
+    path("/", dashboard_urls),
 ]
