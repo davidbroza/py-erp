@@ -41,10 +41,10 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "djmoney",
     'dashboard',
-    'products',
     "customers",
     "ledger",
     "contacts",
+    "productsV2",
 ]
 
 MIDDLEWARE = [
