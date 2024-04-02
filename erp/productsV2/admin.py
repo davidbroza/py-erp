@@ -32,8 +32,9 @@ class OutcomeInline(admin.TabularInline):
     extra = 0
 
 
-class ProductPropertyValueInline(admin.TabularInline):
-    model = ProductPropertyValue
+
+class ProductPropertyInline(admin.TabularInline):
+    model = ProductProperty
     extra = 0
 
 
@@ -51,7 +52,7 @@ class PropertyInline(admin.TabularInline):
 class ProductAdmin(admin.ModelAdmin):
     fields = ["name", "html_configurations"]
     list_display = ["name", "html_configurations"]
-    inlines = [ProductPropertyValueInline, RuleInline]
+    inlines = [ProductPropertyInline, RuleInline]
 
     readonly_fields = ["html_configurations"]
 
@@ -69,10 +70,6 @@ class PropertyAdmin(admin.ModelAdmin):
 class PropertyValueAdmin(admin.ModelAdmin):
     list_display = ["property", "value"]
 
-
-@admin.register(ProductPropertyValue)
-class ProductPropertyValueAdmin(admin.ModelAdmin):
-    list_display = ["product", "property_value"]
 
 
 @admin.register(Rule)
